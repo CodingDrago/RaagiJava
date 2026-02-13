@@ -1,23 +1,24 @@
 import java.util.Scanner;
 
-public class Palindrome {
+public class Greatest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        int original = num;
-        int reversed = 0;
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
 
-        while (num != 0) {
-            int digit = num % 10;
-            reversed = reversed * 10 + digit;
-            num /= 10;
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        if (original == reversed) {
-            System.out.println(original + " is a palindrome");
-        } else {
-            System.out.println(original + " is not a palindrome");
+        int greatest = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > greatest) {
+                greatest = arr[i];
+            }
         }
+
+        System.out.println("Greatest number: " + greatest);
     }
 }
