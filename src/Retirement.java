@@ -2,7 +2,6 @@ import java.time.Year;
 import java.util.Scanner;
 
 public class Retirement {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("What is your current age? ");
