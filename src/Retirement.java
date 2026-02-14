@@ -7,26 +7,22 @@ public class Retirement {
 
         Scanner scanner = new Scanner(System.in);
 
-        try {
-            System.out.print("What is your current age? ");
-            int currentAge = scanner.nextInt();
+        System.out.print("What is your current age? ");
+        int currentAge = scanner.nextInt();
 
-            System.out.print("At what age would you like to retire? ");
-            int retirementAge = scanner.nextInt();
-            int currentYear = Year.now().getValue();
-            int yearsLeft = retirementAge - currentAge;
+        System.out.print("At what age would you like to retire? ");
+        int retirementAge = scanner.nextInt();
 
-            if (yearsLeft > 0) {
-                int retirementYear = currentYear + yearsLeft;
+        int currentYear = Year.now().getValue();
+        int yearsLeft = retirementAge - currentAge;
 
-                System.out.println("\nYou have " + yearsLeft + " years left until you can retire.");
-                System.out.println("It's " + currentYear + ", so you can retire in " + retirementYear + ".");
-            } else {
-                System.out.println("\nYou are already eligible to retire!");
-            }
+        if (yearsLeft > 0) {
+            int retirementYear = currentYear + yearsLeft;
 
-        } catch (Exception e) {
-            System.out.println("Please enter valid numeric ages.");
+            System.out.println("\nYou have " + yearsLeft + " years left until you can retire.");
+            System.out.println("It's " + currentYear + ", so you can retire in " + retirementYear + ".");
+        } else {
+            System.out.println("\nYou are already eligible to retire!");
         }
 
         scanner.close();
